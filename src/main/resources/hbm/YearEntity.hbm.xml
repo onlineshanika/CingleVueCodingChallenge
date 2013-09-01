@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.blog.cingleVue.entity.YearEntity" table="year" schema="" catalog="cinglevuecodingchallenge">
+        <id name="idyear" column="idyear"/>
+        <property name="year" column="year"/>
+        <set name="studentsubjectsByIdyear" inverse="true">
+            <key>
+                <column name="idyear"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.blog.cingleVue.entity.StudentSubjectEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>
